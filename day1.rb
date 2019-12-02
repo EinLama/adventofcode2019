@@ -1,3 +1,4 @@
+require_relative "helpers"
 
 def fuel(mass)
   mass / 3 - 2
@@ -12,7 +13,7 @@ def read_masses(lines=[])
 end
 
 def solution
-  masses = read_masses(File.readlines("riddle_inputs/day1.txt"))
+  masses = read_masses(readlines("day1.txt"))
   fuels_for_all(masses)
 end
 
