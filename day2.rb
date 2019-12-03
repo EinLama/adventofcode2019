@@ -36,7 +36,10 @@ class OpCodeMachine
     return :halt if instruction == 99
 
     operands = find_operands()
-    operation = instruction == 1 ? :+ : :*
+    operation = {
+      1 => :+,
+      2 => :*,
+    }[instruction]
 
     @result = operands[0].send(operation, operands[1])
     @opcodes[find_target_index()] = @result
