@@ -52,8 +52,7 @@ class OpCodeMachine
   end
 
   def run!
-    loop do
-      break if handle_instruction! == :halt
+    while handle_instruction! != :halt
       move!
     end
 
