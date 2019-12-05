@@ -81,12 +81,6 @@ def solution_part1
   machine.run!
 end
 
-def solution_part2
-  opcodes = File.read(filepath("day2.txt"))
-  machine = OpCodeMachine.new(opcodes)
-end
-
 if __FILE__ == $0
   puts solution()
-  puts solution_part2()
 end
