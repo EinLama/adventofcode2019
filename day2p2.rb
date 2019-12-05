@@ -1,6 +1,6 @@
 require_relative "helpers"
 
-class OpCodeMachine
+class AdvancedOpCodeMachine
   attr_accessor :opcodes
   attr_reader :current_address, :result
 
