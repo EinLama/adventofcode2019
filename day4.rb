@@ -15,15 +15,8 @@ def valid_password?(password)
   return false unless password.length == 6
   return false if doubles(password).empty?
 
-  prev_c = nil
-  password.each_char do |c|
-    c = c.to_i
-
-    return false if prev_c && c < prev_c
-    prev_c = c
-  end
-
-  true
+  # Ensure order is ascending:
+  return password.split("") == password.split("").sort
 end
 
 def range()
