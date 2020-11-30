@@ -38,4 +38,17 @@ describe "day4" do
       expect(valid_password?("123789")).to be_falsy
     end
   end
+
+  context "count multiples" do
+    it "counts how often each char exist" do
+      expect(count_multiples("111")).to eq({ "1" => 3 })
+      expect(count_multiples("11222")).to eq({ "1" => 2, "2" => 3 })
+    end
+
+    it "deems more than 2 multiples invalid if it's the highest digit from the group" do
+      expect(valid_multiples?("112233")).to eq(true)
+      expect(valid_multiples?("111122")).to eq(true)
+      expect(valid_multiples?("123444")).to eq(false)
+    end
+  end
 end
